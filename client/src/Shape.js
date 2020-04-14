@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import './App.css';
 
 function Shape(props) {
     return (
-        <div row={props.row} className={props.btype}>
+        <div className={props.shapeType}>
             --
         </div>
     );
