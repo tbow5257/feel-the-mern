@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Square from './Square'
+import { CheckboardContextProvider } from './CheckboardContext';
 
 
 const makeBoard = (size) => {
@@ -54,6 +55,7 @@ const makeBoard = (size) => {
 
 function App() {
 
+  const [colors, setColors] = useState("default");
   const [value, setValue] = useState(8);
   const [size, setSize] = useState(value);
 
@@ -71,10 +73,37 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="Grid">{makeBoard(size)}</div>
+        <CheckboardContextProvider>
+          <div className="Grid">{makeBoard(size)}</div>
+        </CheckboardContextProvider>
         <p>To change checkerboard, enter number and click submit</p>
         <input type="text" name="size" onChange={handleChange}/>
         <button onClick={handleSubmit}>Submit</button>
+
+        <div className="form-check">
+          <label>
+            <input
+              type="radio"
+              name="Colors"
+              value="option3"
+              className="form-check-input"
+            />
+            Black top, red bottom
+          </label>
+        </div>
+
+        <div className="form-check">
+          <label>
+            <input
+              type="radio"
+              name="Colors"
+              value="option3"
+              className="form-check-input"
+            />
+            Red top, black bottom
+          </label>
+        </div>
+
       </header>
     </div>
   );

@@ -1,11 +1,17 @@
-import React, {Fragment} from 'react';
+import React, { Fragment, useContext } from 'react';
+import { CheckboardContextConsumer } from './CheckboardContext';
 import './App.css';
 
 function Shape(props) {
     return (
-        <div className={props.shapeType}>
-            --
-        </div>
+        <CheckboardContextConsumer>
+            { (m) => (
+                    <div className={props.shapeType}>
+                    --
+                    </div>
+                )
+            }
+        </CheckboardContextConsumer>
     );
 }
 
