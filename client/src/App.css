@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #447ae4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.blacksquare {
+  background-color: #000;
+  padding: 20px;
+  color: #000;
+}
+
+.whitesquare {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.Grid {
+  display: flex;
+  flex-flow: row;
 }

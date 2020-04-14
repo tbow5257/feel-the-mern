@@ -9,6 +9,7 @@ services:
     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
       NODE_ENV: production
+      CHOKIDAR_USEPOLLING: true 
     depends_on:
       - mongo
     networks:
