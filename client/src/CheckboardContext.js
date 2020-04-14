@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
-const { Provider, Consumer } = React.createContext();
+import React, {useState} from 'react';
 
+export const StoreContext = React.createContext(null);
 
-class CheckboardContextProvider extends Component {
-    render() {
-      return <Provider value={3}>{this.props.children}</Provider>;
-    }
-  };
+export default ({children}) => {
 
-  export { CheckboardContextProvider, Consumer as CheckboardContextConsumer };
+    const [top, setTop] = React.useState("red-circle")
+    const [bottom, setBottom] = React.useState("green-circle")
+
+    const store = {
+        top: [top, setTop],
+        bottom: [bottom, setBottom],
+    };
+
+    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+}

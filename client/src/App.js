@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Square from './Square'
-import { CheckboardContextProvider } from './CheckboardContext';
+import CheckboardContextProvider from './CheckboardContext';
 
 
 const makeBoard = (size) => {
@@ -71,41 +71,41 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <CheckboardContextProvider>
-          <div className="Grid">{makeBoard(size)}</div>
-        </CheckboardContextProvider>
-        <p>To change checkerboard, enter number and click submit</p>
-        <input type="text" name="size" onChange={handleChange}/>
-        <button onClick={handleSubmit}>Submit</button>
+    <CheckboardContextProvider>
+      <div className="App">
+        <header className="App-header">
+            <div className="Grid">{makeBoard(size)}</div>
+          <p>To change checkerboard, enter number and click submit</p>
+          <input type="text" name="size" onChange={handleChange}/>
+          <button onClick={handleSubmit}>Submit</button>
 
-        <div className="form-check">
-          <label>
-            <input
-              type="radio"
-              name="Colors"
-              value="option3"
-              className="form-check-input"
-            />
-            Black top, red bottom
-          </label>
-        </div>
+          <div className="form-check">
+            <label>
+              <input
+                type="radio"
+                name="Colors"
+                value="option3"
+                className="form-check-input"
+              />
+              Black top, red bottom
+            </label>
+          </div>
 
-        <div className="form-check">
-          <label>
-            <input
-              type="radio"
-              name="Colors"
-              value="option3"
-              className="form-check-input"
-            />
-            Red top, black bottom
-          </label>
-        </div>
+          <div className="form-check">
+            <label>
+              <input
+                type="radio"
+                name="Colors"
+                value="option3"
+                className="form-check-input"
+              />
+              Red top, black bottom
+            </label>
+          </div>
 
-      </header>
-    </div>
+        </header>
+      </div>
+    </CheckboardContextProvider>
   );
 }
 
