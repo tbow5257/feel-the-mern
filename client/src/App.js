@@ -1,122 +1,60 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import logo from './logo.svg';
-// import "bootstrap/dist/css/bootstrap.min.css";
-import axios from 'axios';
-
-const BlackSquare = () => <div className="blacksquare">B</div>;
-const WhiteSquare = () => <div className="whitesquare">W</div>;
+import Square from './Square'
 
 
 const makeBoard = (size) => {
 
-  const bColumn = (size) => {
-    const row = Array(size).fill().map((v, i) => {
-      if (i%2 == 0){
-        return <BlackSquare/>
-      } else {
-        return <WhiteSquare/>
-      }
-    });
-  
-    return <div>{row}</div>
-  };
-  
-  const wColumn = (size) => {
-    const row = Array(size).fill().map((v, i) => {
-      if (i%2 == 0){
-        return <WhiteSquare/>
-      } else {
-        return <BlackSquare/>
-      }
-    });
-  
-    return <div>{row}</div>
-  };
-  
-  function generate(size) {
-    const matrix = Array(size).fill().map((v, i) => {
+  const matrix = Array(size).fill().map((v, i) => {
                       if (i%2 == 0){
-                        return bColumn(size)
+                        return evenRow(size, i)
                       } else {
-                        return wColumn(size)
+                        return oddRow(size, i)
                       }
                     })
-    
-    return matrix;
-  };
-
-  return generate(size);
-}
-
-const bColumn = () => {
-  const row = Array(5).fill().map((v, i) => {
-    if (i%2 == 0){
-      return <BlackSquare/>
-    } else {
-      return <WhiteSquare/>
-    }
-  });
-
-  return <div>{row}</div>
-};
-
-const wColumn = () => {
-  const row = Array(5).fill().map((v, i) => {
-    if (i%2 == 0){
-      return <WhiteSquare/>
-    } else {
-      return <BlackSquare/>
-    }
-  });
-
-  return <div>{row}</div>
-};
-
-function generate() {
-  const matrix = Array(5).fill().map((v, i) => {
-                    if (i%2 == 0){
-                      return bColumn()
-                    } else {
-                      return wColumn()
-                    }
-                  })
-  
+                    
   return matrix;
+
+  function evenRow(size, rowNum) {
+    const row = Array(size).fill().map((v, i) => {
+      if (i%2 == 0){
+        return <Square btype="blacksquare" row={rowNum}/>
+      } else {
+        return <Square btype="whitesquare" row={rowNum}/>
+      }
+    });
+  
+    return <div className="Checker-Row">{row}</div>
+  };
+  
+  function oddRow(size, rowNum) {
+    const row = Array(size).fill().map((v, i) => {
+      if (i%2 == 0){
+        return <Square btype="whitesquare" row={rowNum}/>
+      } else {
+        return <Square btype="blacksquare" row={rowNum}/>
+      }
+    });
+  
+    return <div className="Checker-Row">{row}</div>
+  };
+  
 };
 
-console.log(generate())
-console.log(wColumn)
 
 function App() {
-
-  // useEffect(
-  //   () => {
-  //     async function getData() {
-  //       await axios.get('http://172.18.0.3:8080/user')
-  //         .then(res => console.log('res ', res))
-  //         .catch(err => console.log('err ', err));
-  //     }
-  
-  //     getData();
-  //   },
-  //   []
-  // );
 
   const [value, setValue] = useState(8);
   const [size, setSize] = useState(value);
 
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit')
     setSize(value);
   };
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setValue(Number(e.target.value));
   };
 

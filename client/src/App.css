@@ -50,5 +50,10 @@
 
 .Grid {
   display: flex;
+  flex-flow: column;
+}
+
+.Checker-Row {
+  display: flex;
   flex-flow: row;
 }
