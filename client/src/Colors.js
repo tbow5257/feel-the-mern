@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { StoreContext } from './CheckboardContext';
 
 function Colors({region}) {
-    const [input, setInput] = React.useState("green-circle")
     const {[region]: [data, setData], } = React.useContext(StoreContext)
+    const [input, setInput] = React.useState(data)
 
     const handleChange = (e) => {
         setInput(e.target.value);
@@ -32,9 +32,9 @@ function Colors({region}) {
                     <input
                         type="radio"
                         name="Colors"
-                        value="green-circle"
+                        value="black-circle"
                         className="form-check-input"
-                        checked={input === "green-circle"}
+                        checked={input === "black-circle"}
                         onChange={handleChange}
                     />
                     Black

@@ -5,7 +5,7 @@ export const StoreContext = React.createContext(null);
 export default ({children}) => {
 
     const [top, setTop] = React.useState("red-circle")
-    const [bottom, setBottom] = React.useState("green-circle")
+    const [bottom, setBottom] = React.useState("black-circle")
 
     const store = {
         top: [top, setTop],
