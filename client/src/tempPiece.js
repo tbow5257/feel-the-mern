@@ -4,7 +4,7 @@ import './App.css';
 import { FaCircle } from 'react-icons/fa';
 
 function Shape(props) {
-    const { topColor, bottomColor } = React.useContext(StoreContext)
+    let shapeType;
     let shapeType;
     console.log(topColor, topColor);
 

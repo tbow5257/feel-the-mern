@@ -1,14 +1,14 @@
 import React from 'react';
-import Shape from './Shape'
+import Piece from './Piece'
 
 function Square(props) {
     console.log("props.totalSize", props.totalSize)
     let child;
     if (props.row === props.totalSize-1 || 
         props.row === props.totalSize-2) {
-        child = (<Shape shapeRegion="bottom"/>)  
+        child = (<Piece shapeRegion="bottom"/>)  
     } else if (props.row === 0 || props.row === 1) {
-        child = (<Shape shapeRegion="top"/>)      
+        child = (<Piece shapeRegion="top"/>)      
     } else {
         child = ""
     }
