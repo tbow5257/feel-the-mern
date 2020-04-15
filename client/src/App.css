@@ -36,13 +36,25 @@
 
 .blacksquare {
   background-color: #808080;
-  padding: 20px;
+  width: 60px;
+  height: 60px;
   color: #808080;
+}
+
+.blacksquare:empty::after {
+  content: ".";
+  visibility: hidden;
 }
 
 .whitesquare {
   background-color: #fff;
-  padding: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.whitesquare:empty::after {
+  content: ".";
+  visibility: hidden;
 }
 
 .Grid {
@@ -66,9 +78,9 @@
 .red-triangle {
   width: 0;
   height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid red;
-  border-bottom: 50px solid transparent;
+  border-top: 50% solid transparent;
+  border-right: 100% solid red;
+  border-bottom: 50% solid transparent;
 }
 
 .black-circle {
@@ -79,12 +91,12 @@
   color: #000000;
 }
 
-.green-triangle {
+.black-triangle {
   width: 0;
   height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid red;
-  border-bottom: 50px solid transparent;
+  border-top: 50% solid transparent;
+  border-right: 100% solid red;
+  border-bottom: 50% solid transparent;
 }
 
 .Grid-Container {
@@ -96,3 +108,5 @@
 .Colors-Container {
   margin: 20px;
 }
+
+

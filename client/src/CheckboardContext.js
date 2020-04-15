@@ -4,12 +4,12 @@ export const StoreContext = React.createContext(null);
 
 export default ({children}) => {
 
-    const [top, setTop] = React.useState("red-circle")
-    const [bottom, setBottom] = React.useState("black-circle")
+    const [topColor, setTopColor] = React.useState("red-circle")
+    const [bottomColor, setBottomColor] = React.useState("black-circle")
 
     const store = {
-        top: [top, setTop],
-        bottom: [bottom, setBottom],
+        topColor: [topColor, setTopColor],
+        bottomColor: [bottomColor, setBottomColor],
     };
 
     return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>

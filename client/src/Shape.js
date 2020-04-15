@@ -1,23 +1,24 @@
 import React, { useContext } from 'react';
 import { StoreContext } from './CheckboardContext';
 import './App.css';
+import { FaCircle } from 'react-icons/fa';
 
 function Shape(props) {
-    const { top, bottom } = React.useContext(StoreContext)
+    const { topColor, bottomColor } = React.useContext(StoreContext)
     let shapeType;
-    console.log(top, bottom);
+    console.log(topColor, topColor);
 
     if (props.shapeRegion === "top"){
-        shapeType = top[0];
+        shapeType = topColor[0];
     } else if (props.shapeRegion === "bottom") {
-        shapeType = bottom[0];
+        shapeType = bottomColor[0];
     } else {
         shapeType = ""
     }
     // shape type CSS
     return (
-        <div className={shapeType}>
-        --
+        <div className="hehe">
+            <FaCircle style={{ color: 'blue'}}/>
         </div>
     );
 }

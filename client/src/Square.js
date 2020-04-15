@@ -10,7 +10,7 @@ function Square(props) {
     } else if (props.row === 0 || props.row === 1) {
         child = (<Shape shapeRegion="top"/>)      
     } else {
-        child = "--"
+        child = ""
     }
     return (
         <div row={props.row} className={props.btype}>

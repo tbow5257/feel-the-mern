@@ -27,12 +27,12 @@ function App() {
         <div className="Grid-Container">
           <div className="Colors-Container">
             <p>Top</p>
-            <Colors region="top"/>
+            <Colors region="topColor"/>
           </div>
           <div className="Grid">{makeBoard(size)}</div>
             <div className="Colors-Container">
               <p>Bottom</p>
-              <Colors region="bottom"/>
+              <Colors region="bottomColor"/>
             </div>
         </div>
         <p>To change checkerboard, enter number and click submit</p>
