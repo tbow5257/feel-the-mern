@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Square from './Square'
 import CheckboardContextProvider from './CheckboardContext';
-
+import Colors from './Colors';
 
 const makeBoard = (size) => {
 
@@ -73,38 +73,22 @@ function App() {
   return (
     <CheckboardContextProvider>
       <div className="App">
-        <header className="App-header">
-            <div className="Grid">{makeBoard(size)}</div>
-          <p>To change checkerboard, enter number and click submit</p>
-          <input type="text" name="size" onChange={handleChange}/>
-          <button onClick={handleSubmit}>Submit</button>
-
-          <div className="form-check">
-            <label>
-              <input
-                type="radio"
-                name="Colors"
-                value="option3"
-                className="form-check-input"
-              />
-              Black top, red bottom
-            </label>
+        <div className="Grid-Container">
+          <div className="Colors-Container">
+            <p>Top</p>
+            <Colors region="top"/>
           </div>
-
-          <div className="form-check">
-            <label>
-              <input
-                type="radio"
-                name="Colors"
-                value="option3"
-                className="form-check-input"
-              />
-              Red top, black bottom
-            </label>
-          </div>
-
-        </header>
+          <div className="Grid">{makeBoard(size)}</div>
+            <div className="Colors-Container">
+              <p>Bottom</p>
+              <Colors region="bottom"/>
+            </div>
+        </div>
+        <p>To change checkerboard, enter number and click submit</p>
+        <input type="text" name="size" onChange={handleChange}/>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
+
     </CheckboardContextProvider>
   );
 }

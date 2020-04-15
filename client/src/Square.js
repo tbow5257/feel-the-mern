@@ -6,9 +6,9 @@ function Square(props) {
     let child;
     if (props.row === props.totalSize-1 || 
         props.row === props.totalSize-2) {
-        child = (<Shape shapeRegion="top"/>)      
-    } else if (props.row === 0 || props.row === 1) {
         child = (<Shape shapeRegion="bottom"/>)  
+    } else if (props.row === 0 || props.row === 1) {
+        child = (<Shape shapeRegion="top"/>)      
     } else {
         child = "--"
     }
