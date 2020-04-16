@@ -1,33 +1,45 @@
-import React, { useContext } from 'react';
+import React, { useContext, cloneElement } from 'react';
 import { StoreContext } from './CheckboardContext';
 import './App.css';
-import { FaCircle } from 'react-icons';
+import Circle from './assets/Circle';
+import Triangle from './assets/Triangle';
 
-const shapes = {
-    shape1: <FaCircle />
-}
+const shapesCollection = {
+    shape1: <Circle />,
+    shape2: <Triangle />,
+};
+
+const colorCollection = {
+    color1: "#FF0000",
+    color2: "#000000",
+};
+
 
 function Piece(props) {
-
     const { topColor, 
             bottomColor, 
             topShape, 
             bottomShape } = React.useContext(StoreContext);
+    let shapeColor;
     let shapeType;
 
-    console.log(topColor, topColor);
 
     if (props.shapeRegion === "top"){
-        shapeType = topColor[0];
+        shapeType = topShape[0];
+        shapeColor = topColor[0];
+        console.log("topShape", topShape);
     } else if (props.shapeRegion === "bottom") {
-        shapeType = bottomColor[0];
+        shapeType = bottomShape[0];
+        shapeColor = bottomColor[0];
+        console.log("bottomShape", bottomShape);
     } else {
-        shapeType = ""
+        shapeColor = ""
     }
-    // shape type CSS
+
     return (
-        <div className="hehe">
-            <FaCircle style={{ color: 'blue'}}/>
+        <div>
+            {cloneElement(shapesCollection[shapeType], 
+                          {fill: colorCollection[shapeColor]})}
         </div>
     );
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import CheckboardContextProvider from './CheckboardContext';
-import Colors from './Colors';
+import ChooseColors from './ChooseColors';
+import ChooseShape from './ChooseShape';
 import makeBoard from './Board';
-
 
 function App() {
 
@@ -27,12 +27,14 @@ function App() {
         <div className="Grid-Container">
           <div className="Colors-Container">
             <p>Top</p>
-            <Colors region="topColor"/>
+            <ChooseColors region="topColor"/>
+            <ChooseShape region="topShape"/>
           </div>
           <div className="Grid">{makeBoard(size)}</div>
             <div className="Colors-Container">
               <p>Bottom</p>
-              <Colors region="bottomColor"/>
+              <ChooseColors region="bottomColor"/>
+              <ChooseShape region="bottomShape"/>
             </div>
         </div>
         <p>To change checkerboard, enter number and click submit</p>

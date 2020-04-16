@@ -4,11 +4,12 @@ export const StoreContext = React.createContext(null);
 
 export default ({children}) => {
 
-    const [topColor, setTopColor] = React.useState("red-circle");
-    const [bottomColor, setBottomColor] = React.useState("black-circle");
+    const [topColor, setTopColor] = React.useState("color1");
+    const [bottomColor, setBottomColor] = React.useState("color2");
 
-    const [topShape, setTopShape] = React.useState("circle");
-    const [bottomShape, setBottomShape] = React.useState("triangle");
+    // topShape = "shape1"
+    const [topShape, setTopShape] = React.useState("shape1");
+    const [bottomShape, setBottomShape] = React.useState("shape2");
 
     const store = {
         topColor: [topColor, setTopColor],

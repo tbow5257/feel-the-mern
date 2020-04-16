@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StoreContext } from './CheckboardContext';
 
-function chooseShape({region}) {
+function ChooseShape({region}) {
     const {[region]: [data, setData], } = React.useContext(StoreContext)
     const [input, setInput] = React.useState(data)
 
@@ -17,10 +17,10 @@ function chooseShape({region}) {
                 <label>
                     <input
                         type="radio"
-                        name="Colors"
-                        value="red-triangle"
+                        name="Shape"
+                        value="shape1"
                         className="form-check-input"
-                        checked={input === "red-triangle"}
+                        checked={input === "shape1"}
                         onChange={handleChange}
                     />
                 Circle
@@ -32,9 +32,9 @@ function chooseShape({region}) {
                     <input
                         type="radio"
                         name="Colors"
-                        value="black-triangle"
+                        value="shape2"
                         className="form-check-input"
-                        checked={input === "black-triangle"}
+                        checked={input === "shape2"}
                         onChange={handleChange}
                     />
                     Triangle
@@ -44,4 +44,4 @@ function chooseShape({region}) {
   </form>
 )}
 
-export default chooseShape;
+export default ChooseShape;

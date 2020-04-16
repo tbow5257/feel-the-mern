@@ -18,9 +18,9 @@ function Colors({region}) {
                     <input
                         type="radio"
                         name="Colors"
-                        value="red-circle"
+                        value="color1"
                         className="form-check-input"
-                        checked={input === "red-circle"}
+                        checked={input === "color1"}
                         onChange={handleChange}
                     />
                 Red
@@ -32,9 +32,9 @@ function Colors({region}) {
                     <input
                         type="radio"
                         name="Colors"
-                        value="black-circle"
+                        value="color2"
                         className="form-check-input"
-                        checked={input === "black-circle"}
+                        checked={input === "color2"}
                         onChange={handleChange}
                     />
                     Black
