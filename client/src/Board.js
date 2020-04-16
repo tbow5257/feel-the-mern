@@ -13,14 +13,6 @@ const makeBoard = (size) => {
   
     return matrix;
   
-    function shapeRows(){
-      const collection = new Set();
-  
-      collection.add(0,1);
-      collection.add(size-1);
-      collection.add(size);
-    }
-  
     function evenRow(size, rowNum) {
       const row = Array(size).fill().map((v, i, t) => {
         const size = t.length;

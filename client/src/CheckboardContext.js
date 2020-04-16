@@ -6,7 +6,6 @@ export default ({ children }) => {
     const [topColor, setTopColor] = React.useState("color1")
     const [bottomColor, setBottomColor] = React.useState("color2")
 
-    // topShape = "shape1"
     const [topShape, setTopShape] = React.useState("shape1")
     const [bottomShape, setBottomShape] = React.useState("shape2")
 
