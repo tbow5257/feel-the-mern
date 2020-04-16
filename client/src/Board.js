@@ -24,7 +24,7 @@ const makeBoard = (size) => {
     function evenRow(size, rowNum) {
       const row = Array(size).fill().map((v, i, t) => {
         const size = t.length;
-        if (i%2 == 0){
+        if (i%2 === 0){
           return <Square btype="blacksquare" row={rowNum} totalSize={size}/>
         } else {
           return <Square btype="whitesquare" row={rowNum} totalSize={size}/>
@@ -37,7 +37,7 @@ const makeBoard = (size) => {
     function oddRow(size, rowNum) {
       const row = Array(size).fill().map((v, i, t) => {
         const size = t.length;
-        if (i%2 == 0){
+        if (i%2 === 0){
           return <Square btype="whitesquare" row={rowNum} totalSize={size}/>
         } else {
           return <Square btype="blacksquare" row={rowNum} totalSize={size}/>
